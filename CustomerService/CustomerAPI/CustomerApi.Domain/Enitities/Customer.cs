@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace CustomerApi.Data.Enitities
+namespace CustomerApi.Domain.Enitities
 {    
     public class Customer
     {
@@ -19,18 +19,4 @@ namespace CustomerApi.Data.Enitities
         public virtual ICollection<Address> CustomerAddress { get; set; }
                     = new List<Address>();
     }
-}
-
-
-public class Employee
-{
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id { get; set; }
-    public string EmployeeName { get; set; }
-    public string Skill { get; set; }
-    public string Email { get; set; }
-
-    public ICollection<Address> EmployeeAddress { get; set; }
-                = new List<Address>();
 }
